@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import logo from "../assets/images/logo-SBS-without-BG.png";
+import logo from "../assets/images/logo-without-BG.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +9,7 @@ const Navbar = () => {
   const [securityOpen, setSecurityOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white shadow-md relative z-50">
+    <nav className="bg-white text-gray-900 shadow-md relative z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
@@ -20,15 +20,15 @@ const Navbar = () => {
               className="h-10 w-auto object-contain"
             />
 
-            {/* Hide on mobile, show on md+ */}
+            {/* Hide on mobile, show on md+
             <span className="hidden md:inline text-2xl font-bold leading-none">
               SBS
-            </span>
+            </span> */}
           </Link>
 
         {/* 🔥 Hamburger */}
         <button
-          className="md:hidden text-2xl"
+          className="md:hidden text-3xl"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
