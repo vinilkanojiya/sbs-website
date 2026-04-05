@@ -1,7 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/images/logo-without-BG.png";
-
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,24 +9,12 @@ const Navbar = () => {
   const [solutionOpen, setSolutionOpen] = useState(false);
   const [securityOpen, setSecurityOpen] = useState(false);
 
-   const location = useLocation();
-
-   const getNavClass = ({ isActive }) =>
-    `px-2 py-1 transition ${
-      isActive
-        ? "text-orange-500 border-b-2 border-orange-500 font-semibold"
-        : "text-gray-700 hover:text-blue-400"
-    }`;
- 
-  const isCompanyActive = location.pathname.startsWith("/company");
-  const isSolutionActive = location.pathname.startsWith("/solutions");
-
   return (
     <nav className="bg-white text-gray-900 shadow-md relative z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
-          <Link to="/" className={getNavClass}>
+          <Link to="/" className="flex items-center gap-2">
             <img
               src={logo}
               alt="SBS Logo"
@@ -48,8 +35,7 @@ const Navbar = () => {
           ☰
         </button>
 
-        {/* Desktop Menu ===================================================================================================*/}
-
+        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-md font-medium items-center" >
 
           <Link to="/" className="hover:text-blue-400">Home</Link>
@@ -118,7 +104,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/*  MOBILE MENU */}
+      {/* 🔥 MOBILE MENU */}
       {menuOpen && (
         <div className="md:hidden bg-white px-6 py-4 space-y-4">
 
