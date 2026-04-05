@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
+import CultureAndValues from "../pages/CultureAndValues";
 
 const AppRoutes = () => {
   return (
@@ -14,7 +15,9 @@ const AppRoutes = () => {
       <Route path="/contact" element={<h1>Contact Page</h1>} />
 
       {/* {Company routes} */}
-      <Route path="/company/about" element={<h1>Company - About Page</h1>} />
+      <Route path="/company/about/culture-and-values" element={<CultureAndValues/>} />
+      <Route path="/company/about/founder" element={<h1>Company - Founder</h1>} />
+      
       <Route path="/company/board" element={<h1>Company - Board Page</h1>} />
       <Route path="/company/management" element={<h1>Company - Management Page</h1>} />
       <Route path="/company/news" element={<h1>Company - News Page</h1>} />
