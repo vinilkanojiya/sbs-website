@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/images/logo-without-BG.png";
 
@@ -177,23 +177,77 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+   
+      {/* 🔥 MOBILE MENU */}
       {menuOpen && (
         <div className="md:hidden bg-white px-6 py-4 space-y-4">
 
-          <NavLink to="/" className="block">Home</NavLink>
+          <Link to="/" className="block">Home</Link>
 
-          <NavLink to="/company/about/culture-and-values" className="block">
-            Culture And Values
-          </NavLink>
+          {/* Company */}
+          <div>
+            <button onClick={() => setCompanyOpen(!companyOpen)}>
+              Company ▾
+            </button>
 
-          <NavLink to="/solutions/security/india" className="block">
-            Security India
-          </NavLink>
+            {companyOpen && (
+              <div className="ml-4 mt-2 space-y-2">
 
-          <NavLink to="/investors" className="block">Investors</NavLink>
-          <NavLink to="/careers" className="block">Careers</NavLink>
-          <NavLink to="/contact" className="block">Contact Us</NavLink>
+                {/* About */}
+                <div>
+                  <button onClick={() => setAboutOpen(!aboutopen)}>
+                    About SBS Group Enterprises ▾
+                  </button>
+
+                  {aboutopen && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      <Link to="/company/about/culture-and-values" className="block">Culture And Values</Link>
+                      <Link to="/company/about/founder" className="block">Founder</Link>
+                    </div>
+                  )}
+                </div>
+                {/* <Link to="/company/about" className="block">About SBS Group Enterprises ▾</Link> */}
+
+                <Link to="/company/board" className="block">Board Of Directors</Link>
+                <Link to="/company/management" className="block">Group Management Committee</Link>
+                <Link to="/company/news" className="block">News & Media</Link>
+                <Link to="/company/news" className="block">Training And Development </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <button onClick={() => setSolutionOpen(!solutionOpen)}>
+              Solutions ▾
+            </button>
+
+            {solutionOpen && (
+              <div className="ml-4 mt-2 space-y-2">
+
+                {/* Security */}
+                <div>
+                  <button onClick={() => setSecurityOpen(!securityOpen)}>
+                    Security ▾
+                  </button>
+
+                  {securityOpen && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      <Link to="/solutions/security/india" className="block">India</Link>
+                      <Link to="/solutions/security/international" className="block">International</Link>
+                    </div>
+                  )}
+                </div>
+
+                <Link to="/solutions/facility" className="block">Facility</Link>
+                <Link to="/solutions/logistics" className="block">Logistics</Link>
+              </div>
+            )}
+          </div>
+
+          <Link to="/investors" className="block">Investors</Link>
+          <Link to="/careers" className="block">Careers</Link>
+          <Link to="/contact" className="block">Contact Us</Link>
 
         </div>
       )}
