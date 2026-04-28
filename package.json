@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://vinilkanojiya.github.io/sbs-website",
+  "homepage": "https://sbsgroupbharat.com",
   "scripts": {
   "dev": "vite",
   "build": "vite build",
