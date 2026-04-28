@@ -5,6 +5,9 @@ on:
     branches:
       - preprod
 
+permissions:
+  contents: write        # ← add this
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
