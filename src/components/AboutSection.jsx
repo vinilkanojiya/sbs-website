@@ -3,7 +3,7 @@ import operatorImg from "../assets/images/security-operator.jpg"; // your image
 
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         {/* 🔹 LEFT CONTENT */}
@@ -11,7 +11,7 @@ const AboutSection = () => {
 
           {/* Heading */}
          <h2 className=" text-bg-gray-900 text-2xl md:text-3xl font-bold leading-snug">
-                SBS Pvt. Ltd. delivers trusted Security, Facility Management, and Cash Logistics solutions across India.
+                SBS Pvt. Ltd. delivers trusted Security Services and Cash Logistics across Madhya Pradesh, along with Facility Management solutions across India.
         </h2>
 
           {/* Description */}
@@ -27,7 +27,7 @@ const AboutSection = () => {
           {/* Button */}
           <Link
             to="/company"
-            className="inline-block mt-6 bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition"
+            className="inline-block mt-8 bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
           >
             Know More
           </Link>
