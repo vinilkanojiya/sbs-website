@@ -6,7 +6,7 @@ on:
       - preprod
 
 permissions:
-  contents: write        # ← add this
+  contents: write
 
 jobs:
   deploy:
@@ -29,9 +29,10 @@ jobs:
       - name: Add CNAME for preprod
         run: echo "preprod.sbsgroupbharat.com" > dist/CNAME
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to sbs-website-preprod repo
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.PREPROD_DEPLOY_TOKEN }}
+          external_repository: vinilkanojiya/sbs-website-preprod
           publish_dir: ./dist
-          publish_branch: gh-pages-preprod
+          publish_branch: gh-pages
