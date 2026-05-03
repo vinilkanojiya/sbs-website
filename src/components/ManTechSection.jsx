@@ -1,4 +1,5 @@
 import securityImg from "../assets/images/security-operator.jpg";
+import {Link} from "react-router-dom";
 
 const ManTechSection = () => {
   return (
@@ -33,9 +34,11 @@ const ManTechSection = () => {
           </p>
 
           {/* CTA Button */}
-          <button className="inline-block mt-8 bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold">
-            WANT TO KNOW MORE
-          </button>
+          <Link to = "/solutions/security">
+            <button className="inline-block mt-8 bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold">
+              WANT TO KNOW MORE
+            </button>
+          </Link>
         </div>
 
         {/* Right Image with Red Border Effect */}

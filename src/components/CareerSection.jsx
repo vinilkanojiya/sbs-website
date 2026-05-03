@@ -56,7 +56,7 @@ const CareerSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <div className="text-center bg-white rounded-lg p-4 shadow-sm">
                 <p className="text-2xl font-bold text-red-600">50+</p>
                 <p className="text-gray-500 text-sm mt-1">Open Positions</p>

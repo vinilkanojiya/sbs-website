@@ -80,18 +80,10 @@ const Navbar = () => {
 
                 <div className="w-72">
                   <div className="relative group/security">
-                    <div className="block px-4 py-2 hover:bg-gray-100">
-                      Security Solutions ▸
-                    </div>
-
-                    <div className="absolute top-0 left-full hidden group-hover/security:block bg-gray-100 w-40">
-                      <Link to="/solutions/security/india" className="block px-4 py-2 hover:bg-gray-200">India</Link>
-                      <Link to="/solutions/security/international" className="block px-4 py-2 hover:bg-gray-200">International</Link>
-                    </div>
-                  </div>
-
+                  <Link to="/solutions/security" className="block px-4 py-2 hover:bg-gray-200">Security Solutions</Link>
                   <Link to="/solutions/facility" className="block px-4 py-2 hover:bg-gray-100">Facility Management Solutions</Link>
                   <Link to="/solutions/logistics" className="block px-4 py-2 hover:bg-gray-100">Cash Logistics Solutions</Link>
+                  </div>
                 </div>
 
               </div>
@@ -150,21 +142,7 @@ const Navbar = () => {
 
             {solutionOpen && (
               <div className="ml-4 mt-2 space-y-2">
-
-                {/* Security */}
-                <div>
-                  <button onClick={() => setSecurityOpen(!securityOpen)}>
-                    Security ▾
-                  </button>
-
-                  {securityOpen && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      <Link to="/solutions/security/india" className="block">India</Link>
-                      <Link to="/solutions/security/international" className="block">International</Link>
-                    </div>
-                  )}
-                </div>
-
+                <Link to="/solutions/security" className="block">Security</Link>
                 <Link to="/solutions/facility" className="block">Facility</Link>
                 <Link to="/solutions/logistics" className="block">Logistics</Link>
               </div>

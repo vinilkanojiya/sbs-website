@@ -3,6 +3,7 @@
 import securityImg from "../assets/images/security-room.jpg"
 import facilityImg from "../assets/images/hero-facility.jpg"
 import cashImg from "../assets/images/hero-logistics.jpg"
+import {Link} from "react-router-dom";
 
 const businessLines = [
   {
@@ -11,7 +12,7 @@ const businessLines = [
     image: securityImg,
     description:
       "We are committed to providing reliable and professional Security Solutions to businesses and individuals. Our trained security personnel ensure a safe and secure environment for your workplace and assets.",
-    link: "/security",
+    link: "/solutions/security",
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const businessLines = [
     image: facilityImg,
     description:
       "We offer comprehensive Facility Management Services tailored to meet the needs of modern businesses. Our team ensures your workplace remains clean, functional and well-maintained at all times.",
-    link: "/facility",
+    link: "/solutions/facility",
   },
   {
     id: 3,
@@ -27,7 +28,7 @@ const businessLines = [
     image: cashImg,
     description:
       "We provide secure and reliable Cash Logistics Solutions to help businesses manage their cash flow efficiently. Our services ensure safe transportation and handling of cash with complete accountability.",
-    link: "/cash-logistics",
+    link: "/solutions/logistics",
   },
 ];
 
@@ -73,12 +74,12 @@ const BusinessLines = () => {
               <p className="text-white text-lg mb-6 text-center">
                 {item.description}
               </p>
-              <a
-                href={item.link}
+              <Link
+                to={item.link}
                 className="border-2 border-white text-white px-8 py-2 font-semibold hover:bg-white hover:text-red-600 transition-all duration-300"
               >
                 Know More
-              </a>
+              </Link>
 
               {/* Bottom Label on Hover */}
               <div className="absolute bottom-0 left-0 right-0 bg-red-700 py-3">
