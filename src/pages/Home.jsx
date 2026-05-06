@@ -4,7 +4,7 @@ import AboutSection from "../components/AboutSection";
 import CareerSection from "../components/CareerSection";
 import BusinessLines from "../components/BusinessLines";
 import ManTechSection from "../components/ManTechSection";
-import CtaBanner from "../components/CtaBanner";
+
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
     <BusinessLines/>
     <CareerSection/>
     <ManTechSection />
-    <CtaBanner />
+    
    </>
     )
 };

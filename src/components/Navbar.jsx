@@ -48,23 +48,9 @@ const Navbar = () => {
 
             <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
               <div className="bg-white text-black w-56 shadow-lg">
-                {/* <Link to="/company/about" className="block px-4 py-2 hover:bg-gray-100">About SBS Group Enterprises</Link> */}
-                {/*  */}
-                     <div className="relative group/security">
-                    <div className="block px-4 py-2 hover:bg-gray-100">
-                      About SBS Group Enterprises ▸
-                    </div>
-
-                    <div className="absolute top-0 left-full hidden group-hover/security:block bg-gray-100 w-40">
-                      <Link to="/company/about/culture-and-values" className="block px-4 py-2 hover:bg-gray-200">Culture And Values</Link>
-                      <Link to="/company/about/founder" className="block px-4 py-2 hover:bg-gray-200">Founder</Link>
-                    </div>
-                  </div>
-                {/*  */}
-                <Link to="/company/board" className="block px-4 py-2 hover:bg-gray-100">Board Of Directors</Link>
-                <Link to="/company/management" className="block px-4 py-2 hover:bg-gray-100">Group Management Committee</Link>
-                <Link to="/company/news" className="block px-4 py-2 hover:bg-gray-100">News & Media</Link>
-                 <Link to="/company/training-and-development" className="block px-4 py-2 hover:bg-gray-100">Training And Development </Link>
+                <Link to="/company/about/culture-and-values" className="block px-4 py-2 hover:bg-gray-200">Culture And Values</Link>
+                <Link to="/company/about/founder" className="block px-4 py-2 hover:bg-gray-200">Founder</Link>
+                <Link to="/company/training-and-development" className="block px-4 py-2 hover:bg-gray-100">Training And Development </Link>
               </div>
             </div>
           </div>
@@ -90,7 +76,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link to="/investors" className="hover:text-blue-400">Investors</Link>
+      
           <Link to="/careers" className="hover:text-blue-400">Careers</Link>
           <Link to="/contact" className="hover:text-blue-400">Contact Us</Link>
         </div>
