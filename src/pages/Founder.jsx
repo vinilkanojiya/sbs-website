@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import arjunImg from "../assets/images/arjun-image.png";
-import ravindraImg from "../assets/images/ravindra-image.png";
+import arjunImg from "../assets/images/Arjun-image.png";
+import ravindraImg from "../assets/images/Ravindra-image.png";
 
 const Founder = () => {
   return (
