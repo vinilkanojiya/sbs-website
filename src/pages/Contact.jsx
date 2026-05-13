@@ -109,9 +109,9 @@ const Contact = () => {
             you shortly.
           </p>
           
-          <a>  href="/"
+          <a  href="/"
             className="bg-red-600 text-white px-8 py-3 font-bold rounded-lg hover:bg-red-700 transition inline-block"
-          
+          >
             Back to Home
           </a>
         </div>
