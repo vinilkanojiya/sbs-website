@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import CultureAndValues from "../pages/CultureAndValues";
 import Founder from "../pages/Founder";
+import TrainingAndDevelopment from "../pages/TrainingAndDevelopment";
 
 const AppRoutes = () => {
   return (
@@ -18,9 +19,10 @@ const AppRoutes = () => {
       {/* {Company routes} */}
       <Route path="/company/about/culture-and-values" element={<CultureAndValues/>} />
       <Route path="/company/about/founder" element={<Founder/>} />
-      
+      <Route path="/company/about/training-and-development" element={<TrainingAndDevelopment/>} />
+
       <Route path="/company/board" element={<h1>Company - Board Page</h1>} />
-      <Route path="/company/management" element={<h1>Company - Management Page</h1>} />
+      <Route path="/company/management" element={<h1>Company - Management Page</h1>} /> 
       <Route path="/company/news" element={<h1>Company - News Page</h1>} />
 
       {/* {Solutions routes} */}
