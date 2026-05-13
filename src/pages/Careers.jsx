@@ -56,7 +56,7 @@ const Careers = () => {
 
     try {
       const data = new FormData();
-      data.append("access_key", "70554610-e37f-4f16-8535-dd7222ed0ba3");
+      data.append("access_key", "your_web3forms_key_here");
       data.append("firstName", formData.firstName);
       data.append("lastName", formData.lastName);
       data.append("email", formData.email);
