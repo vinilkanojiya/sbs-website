@@ -50,7 +50,7 @@ const Navbar = () => {
               <div className="bg-white text-black w-56 shadow-lg">
                 <Link to="/company/about/culture-and-values" className="block px-4 py-2 hover:bg-gray-200">Culture And Values</Link>
                 <Link to="/company/about/founder" className="block px-4 py-2 hover:bg-gray-200">Founder</Link>
-                <Link to="/company/training-and-development" className="block px-4 py-2 hover:bg-gray-100">Training And Development </Link>
+                <Link to="/company/about/training-and-development" className="block px-4 py-2 hover:bg-gray-100">Training And Development </Link>
               </div>
             </div>
           </div>
@@ -97,25 +97,12 @@ const Navbar = () => {
             {companyOpen && (
               <div className="ml-4 mt-2 space-y-2">
 
-                {/* About */}
-                <div>
-                  <button onClick={() => setAboutOpen(!aboutopen)}>
-                    About SBS Group Enterprises ▾
-                  </button>
-
-                  {aboutopen && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      <Link to="/company/about/culture-and-values" className="block">Culture And Values</Link>
-                      <Link to="/company/about/founder" className="block">Founder</Link>
-                    </div>
-                  )}
-                </div>
+                
+                
                 {/* <Link to="/company/about" className="block">About SBS Group Enterprises ▾</Link> */}
-
-                <Link to="/company/board" className="block">Board Of Directors</Link>
-                <Link to="/company/management" className="block">Group Management Committee</Link>
-                <Link to="/company/news" className="block">News & Media</Link>
-                <Link to="/company/news" className="block">Training And Development </Link>
+                <Link to="/company/about/culture-and-values" className="block">Culture And Values</Link>
+                <Link to="/company/about/founder" className="block">Founder</Link>
+                <Link to="/company/about/training-and-development" className="block">Training And Development </Link>
               </div>
             )}
           </div>
@@ -135,7 +122,6 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/investors" className="block">Investors</Link>
           <Link to="/careers" className="block">Careers</Link>
           <Link to="/contact" className="block">Contact Us</Link>
 
