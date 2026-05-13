@@ -3,7 +3,10 @@ import Home from "../pages/Home";
 import CultureAndValues from "../pages/CultureAndValues";
 import Founder from "../pages/Founder";
 import TrainingAndDevelopment from "../pages/TrainingAndDevelopment";
-
+import SecuritySolutions from "../pages/SecuritySolutions";
+import FacilitySolutions from "../pages/FacilitySolutions";
+import CashLogisticsSolutions from "../pages/CashLogisticsSolutions";
+import Careers from "../pages/Careers";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -13,7 +16,7 @@ const AppRoutes = () => {
       <Route path="/company" element={<h1>Company Page</h1>} />
       <Route path="/solutions" element={<h1>Solutions Page</h1>} />
       <Route path="/investors" element={<h1>Investors Page</h1>} />
-      <Route path="/careers" element={<h1>Careers Page</h1>} />
+      <Route path="/careers" element={<Careers />} />
       <Route path="/contact" element={<h1>Contact Page</h1>} />
 
       {/* {Company routes} */}
@@ -26,9 +29,9 @@ const AppRoutes = () => {
       <Route path="/company/news" element={<h1>Company - News Page</h1>} />
 
       {/* {Solutions routes} */}
-      <Route path="/solutions/security" element={<h1>Solutions - Security </h1>} />
-      <Route path="/solutions/facility" element={<h1>Solutions - Facility Page</h1>} />
-      <Route path="/solutions/logistics" element={<h1>Solutions - Logistics Page</h1>} />
+      <Route path="/solutions/security" element={<SecuritySolutions />} />
+      <Route path="/solutions/facility" element={<FacilitySolutions />} />
+      <Route path="/solutions/logistics" element={<CashLogisticsSolutions />} />
     </Routes>
   );
 };
