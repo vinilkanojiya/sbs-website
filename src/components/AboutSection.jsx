@@ -26,7 +26,7 @@ const AboutSection = () => {
 
           {/* Button */}
           <Link
-            to="/company"
+            to="/company/about/culture-and-values"
             className="inline-block mt-8 bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
           >
             Know More
