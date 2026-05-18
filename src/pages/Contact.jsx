@@ -5,18 +5,18 @@ const contactDetails = [
     id: 1,
     title: "SBS Group Bharat – Head Office",
     address: "Indore, Madhya Pradesh",
-    phone: "+91 XXXXX XXXXX",
-    email: "info@sbsgroupbharat.com",
+    phone: "+91 99772 32777 , +91 86025 11596 ",
+    email: "sbsgroupbharat@gmail.com",
   },
   {
     id: 2,
     title: "Business Enquiries",
-    email: "business@sbsgroupbharat.com",
+    email: "sbsgroupbharat@gmail.com",
   },
   {
     id: 3,
     title: "Career Enquiries",
-    email: "careers@sbsgroupbharat.com",
+    email: "sbsgroupbharat@gmail.com",
   },
 ];
 

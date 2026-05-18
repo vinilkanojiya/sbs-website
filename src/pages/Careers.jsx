@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const positions = [
   "Security Guard",
@@ -306,7 +307,19 @@ const Careers = () => {
             </button>
 
           </form>
+
+          
         </div>
+        {/* contact details */}
+            <div className="bg-gray-100 rounded-lg p-4 mt-6 text-center pb-6">
+              <p className="mb-4">For any queries, please contact us</p>
+                <Link
+                  to="/contact"
+                  className="bg-red-600 text-white px-8 py-3 font-bold rounded-lg hover:bg-red-700 transition inline-block"
+                >
+                  Contact Us
+                </Link>
+            </div>
       </div>
     </section>
   );

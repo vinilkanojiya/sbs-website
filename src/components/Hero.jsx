@@ -68,7 +68,7 @@ const Hero = () => {
           src={img}
           alt={`slide-${index}`}
           loading={index === 0 ? "eager" : "lazy"}
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w-full h-full object-cover duration-1000 ${
             index === current ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -83,7 +83,7 @@ const Hero = () => {
 
           <p className="mt-4 text-lg">
             Providing Security, Facility Management and Cash Logistics
-            solutions across India.
+            solutions.
           </p>
 
       
