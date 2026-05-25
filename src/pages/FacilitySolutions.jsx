@@ -8,14 +8,14 @@ import facilityImg from "../assets/images/hero-facility.jpg";
 // import facilityImg from "../assets/images/hero-facility.jpg";
 
 // Industries images import karo
-// import healthcareImg from "../assets/images/healthcare.jpg";
-// import educationImg from "../assets/images/education.jpg";
-// import manufacturingImg from "../assets/images/manufacturing.jpg";
-// import residentialImg from "../assets/images/residential.jpg";
-// import itesImg from "../assets/images/ites.jpg";
-// import retailImg from "../assets/images/retail.jpg";
-// import pharmaImg from "../assets/images/pharma.jpg";
-// import dataCentresImg from "../assets/images/data-centres.jpg";
+import healthcareImg from "../assets/images/healthcare.jpg";
+import educationImg from "../assets/images/education.jpg";
+import manufacturingImg from "../assets/images/manufacturing.jpg";
+import residentialImg from "../assets/images/residential.jpg";
+import itesImg from "../assets/images/ites.jpg";
+import retailImg from "../assets/images/retail.jpg";
+import pharmaImg from "../assets/images/pharma.jpg";
+import dataCentresImg from "../assets/images/data-centres.jpg";
 
 
 
@@ -109,27 +109,27 @@ const solutions = [
   },
 ];
 
-const industries = [
-  { id: 1, title: "HEALTHCARE" },
-  { id: 2, title: "EDUCATION" },
-  { id: 3, title: "MANUFACTURING" },
-  { id: 4, title: "RESIDENTIAL" },
-  { id: 5, title: "ITES" },
-  { id: 6, title: "RETAIL" },
-  { id: 7, title: "PHARMA" },
-  { id: 8, title: "DATA CENTRES" },
-];
-
 // const industries = [
-//   { id: 1, title: "HEALTHCARE", image: healthcareImg },
-//   { id: 2, title: "EDUCATION", image: educationImg },
-//   { id: 3, title: "MANUFACTURING", image: manufacturingImg },
-//   { id: 4, title: "RESIDENTIAL", image: residentialImg },
-//   { id: 5, title: "ITES", image: itesImg },
-//   { id: 6, title: "RETAIL", image: retailImg },
-//   { id: 7, title: "PHARMA", image: pharmaImg },
-//   { id: 8, title: "DATA CENTRES", image: dataCentresImg },
+//   { id: 1, title: "HEALTHCARE" },
+//   { id: 2, title: "EDUCATION" },
+//   { id: 3, title: "MANUFACTURING" },
+//   { id: 4, title: "RESIDENTIAL" },
+//   { id: 5, title: "ITES" },
+//   { id: 6, title: "RETAIL" },
+//   { id: 7, title: "PHARMA" },
+//   { id: 8, title: "DATA CENTRES" },
 // ];
+
+const industries = [
+  { id: 1, title: "HEALTHCARE", image: healthcareImg },
+  { id: 2, title: "EDUCATION", image: educationImg },
+  { id: 3, title: "MANUFACTURING", image: manufacturingImg },
+  { id: 4, title: "RESIDENTIAL", image: residentialImg },
+  { id: 5, title: "ITES", image: itesImg },
+  { id: 6, title: "RETAIL", image: retailImg },
+  { id: 7, title: "PHARMA", image: pharmaImg },
+  { id: 8, title: "DATA CENTRES", image: dataCentresImg },
+];
 
 const differentiators = [
   "IoT-enabled maintenance and predictive asset management",
@@ -285,16 +285,16 @@ const FacilitySolutions = () => {
                 key={industry.id}
                 className="relative overflow-hidden group cursor-pointer h-[200px] bg-gray-300 rounded-lg"
               >
-                {/* Placeholder Image */}
+                {/* Placeholder Image
                 <div className="w-full h-full bg-gray-400 flex items-center justify-center">
                   <span className="text-gray-600 text-sm">Image</span>
-                </div>
+                </div> */}
 
-                {/* <img
+                <img
                     src={industry.image}
                     alt={industry.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    /> */}
+                    />
 
                 {/* Label */}
                 <div className="absolute bottom-0 left-0 right-0 bg-red-600 py-2 text-center">

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import securityImg from "../assets/images/security-room.jpg";
+import operatorImg from "../assets/images/gaurd-half.jpeg"; // your image
+import securityImg from "../assets/images/camera-scanner-gaurd-chest.png";
 import securityOperatorImg from "../assets/images/security-operator.jpg";
 import heroSecurityImg from "../assets/images/hero-security.jpg";
+import droneGaurdImg from "../assets/images/drone-gaurd.jpg";
 
 const SecuritySolutions = () => {
   const infrastructureItems = [
@@ -91,7 +93,7 @@ const SecuritySolutions = () => {
             {/* Image - order-2 on mobile, order-1 on desktop */}
             <div className="order-2 md:order-1">
               <img
-                src={securityImg}
+                src={operatorImg}
                 alt="Security Solution"
                 className="w-full h-[300px] object-cover rounded-2xl shadow-lg"
               />
@@ -231,7 +233,7 @@ const SecuritySolutions = () => {
           {/* Image - order-2 on mobile, order-1 on desktop */}
           <div className="order-2 md:order-1">
             <img
-              src={heroSecurityImg}
+              src={droneGaurdImg}
               alt="Drone Security"
               className="w-full h-[350px] object-cover rounded-2xl shadow-lg"
             />
