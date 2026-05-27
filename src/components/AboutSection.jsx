@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import operatorImg from "../assets/images/security-operator.jpg"; // your image
+import operatorImg from "../assets/images/gaurd-stand-bg-sbs-half.jpeg"; // your image
 
 const AboutSection = () => {
   return (

@@ -39,28 +39,85 @@ const Contact = () => {
     agree: false,
   });
 
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [submitError, setSubmitError] = useState("");
+
+  // ===== VALIDATION =====
+  const validate = () => {
+    const newErrors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters.";
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    // Phone validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Phone number must be exactly 10 digits.";
+    }
+
+    // Select validation
+    if (!formData.select) {
+      newErrors.select = "Please select an enquiry type.";
+    }
+
+    // Message validation
+    if (formData.message.trim() && formData.message.trim().length < 3) {
+      newErrors.message = "Message must be at least 3 characters.";
+    }
+
+    // Agree validation
+    if (!formData.agree) {
+      newErrors.agree = "Please authorize to send notifications.";
+    }
+
+    return newErrors;
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    // Phone mein sirf numbers allow karo
+    if (name === "phone" && !/^[0-9]*$/.test(value)) return;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+
+    // Real time error clear karo
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
+    setSubmitError("");
 
-    if (!formData.agree) {
-      setError("Please authorize to send notifications before submitting.");
-      setLoading(false);
+    // Validate karo
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
+
+    setLoading(true);
 
     try {
       const data = new FormData();
@@ -82,10 +139,10 @@ const Contact = () => {
       if (result.success) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Please try again.");
+        setSubmitError("Something went wrong. Please try again.");
       }
     } catch (err) {
-      setError("Something went wrong. Please try again.");
+      setSubmitError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -109,7 +166,7 @@ const Contact = () => {
             you shortly.
           </p>
           
-          <a  href="/"
+           <a href="/"
             className="bg-red-600 text-white px-8 py-3 font-bold rounded-lg hover:bg-red-700 transition inline-block"
           >
             Back to Home
@@ -184,10 +241,16 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
                   placeholder="Enter Name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-600"
+                  className={`w-full border rounded-lg px-4 py-2 focus:outline-none ${
+                    errors.name
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-300 focus:border-red-600"
+                  }`}
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                )}
               </div>
 
               {/* Email */}
@@ -196,14 +259,20 @@ const Contact = () => {
                   Email Id <span className="text-red-600">*</span>
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                   placeholder="Enter Email Id"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-600"
+                  className={`w-full border rounded-lg px-4 py-2 focus:outline-none ${
+                    errors.email
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-300 focus:border-red-600"
+                  }`}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                )}
               </div>
 
               {/* Select */}
@@ -215,8 +284,11 @@ const Contact = () => {
                   name="select"
                   value={formData.select}
                   onChange={handleChange}
-                  required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-600 bg-white"
+                  className={`w-full border rounded-lg px-4 py-2 focus:outline-none bg-white ${
+                    errors.select
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-300 focus:border-red-600"
+                  }`}
                 >
                   <option value="">Select Enquiry Type</option>
                   {selectOptions.map((option, index) => (
@@ -225,6 +297,9 @@ const Contact = () => {
                     </option>
                   ))}
                 </select>
+                {errors.select && (
+                  <p className="text-red-500 text-xs mt-1">{errors.select}</p>
+                )}
               </div>
 
               {/* Phone */}
@@ -237,11 +312,17 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  required
                   maxLength={10}
-                  placeholder="Enter Phone No"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-600"
+                  placeholder="Enter 10 digit Phone No"
+                  className={`w-full border rounded-lg px-4 py-2 focus:outline-none ${
+                    errors.phone
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-300 focus:border-red-600"
+                  }`}
                 />
+                {errors.phone && (
+                  <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                )}
               </div>
 
               {/* Message */}
@@ -254,30 +335,42 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  placeholder="Message"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-red-600 resize-none"
+                  placeholder="Message (minimum 3 characters)"
+                  className={`w-full border rounded-lg px-4 py-2 focus:outline-none resize-none ${
+                    errors.message
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-300 focus:border-red-600"
+                  }`}
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+                )}
               </div>
 
               {/* Agree Checkbox */}
-              <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  name="agree"
-                  checked={formData.agree}
-                  onChange={handleChange}
-                  className="mt-1"
-                />
-                <p className="text-sm text-gray-600">
-                  I hereby authorize to send notifications on SMS / Messages /
-                  Promotional / Informational messages{" "}
-                  <span className="text-red-600">*</span>
-                </p>
+              <div>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    name="agree"
+                    checked={formData.agree}
+                    onChange={handleChange}
+                    className="mt-1"
+                  />
+                  <p className="text-sm text-gray-600">
+                    I hereby authorize to send notifications on SMS / Messages /
+                    Promotional / Informational messages{" "}
+                    <span className="text-red-600">*</span>
+                  </p>
+                </div>
+                {errors.agree && (
+                  <p className="text-red-500 text-xs mt-1">{errors.agree}</p>
+                )}
               </div>
 
-              {/* Error */}
-              {error && (
-                <p className="text-red-600 text-sm font-semibold">{error}</p>
+              {/* Submit Error */}
+              {submitError && (
+                <p className="text-red-600 text-sm font-semibold">{submitError}</p>
               )}
 
               {/* Submit */}
